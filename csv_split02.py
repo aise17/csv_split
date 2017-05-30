@@ -1,12 +1,15 @@
 import unicodecsv as csv
 import logging
+from sys import argv
+
+filenames = argv
 
 n_split = 100000
 count = 0
 u = 0
 
 
-r = open('Parakike.csv', 'rU')
+r = open(filenames[1], 'rU')
 reader = csv.reader(r, delimiter=',', encoding='utf-8')
 logging.basicConfig(filename='log_split_csv.log', level=logging.INFO)
 w = open('result%d.csv' % (u), 'wb')
